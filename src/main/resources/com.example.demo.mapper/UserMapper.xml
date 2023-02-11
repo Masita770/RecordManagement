@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <select id="selectOne" resultType="com.example.demo.domain.User">
+        SELECT id, username, password FROM testusers WHERE id = (#{id})
+    </select>
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        INSERT into testusers (id,username,password) values (#{id},#{username},#{password})
+    </insert>
+</mapper>
