@@ -1,23 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <meta charset="UTF-8">
+<head>
 <title>ログインページ</title>
 </head>
 <body>
 <h1 class="mt-3">テストアプリケーション</h1>
-<form action="@{/login}" method="post">
+<form th:action="@{/login}" method="post">
   <div class="mt-3">
-    <label for="username" class="form-label">ユーザー名</label>
-    <input type="text" id="username" class="form-control">
+    <label >ユーザー名</label>
+    <input type="text" name="username" class="form-control" />
   </div>
   <div class="mt-3">
-    <label for="password" class="form-label">パスワード</label>
-    <input type="password" id="password" class="form-control">
+    <label>パスワード</label>
+    <input type="password" name="password" class="form-control" />
   </div>
   <div class="mt-3">
     <button type="submit" class="btn btn-primary" href="list">ログイン</button>
   </div>
 </form>
 <li>
-  <a href="@{list}">一覧</a>
+  <a href="@{/list}">一覧</a>
 </li>
 </body>
 </html>
